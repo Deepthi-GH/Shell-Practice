@@ -1,5 +1,6 @@
 #!/bin/bash
---date =$(date)
+date =$(date)
+echo "today date is:$date" 
 start_time=$(DATE+%s)
 
 SLEEP 10
