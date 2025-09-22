@@ -1,6 +1,7 @@
 #!/bin/bash
-
-NUMBER=$1
+ echo "please enter a no"
+ read NUMBER
+ #NUMBER=$1
  if [ $NUMBER -lt 10 ]
  then
     echo "given number $NUMBER is less than 10"
