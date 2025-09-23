@@ -5,5 +5,5 @@ Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
 
-echo -e "$B Hi Deepthi"
+echo -e "$B Hi Deepthi $N"
 echo "how are you?"
