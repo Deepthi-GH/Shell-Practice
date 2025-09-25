@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
  error(){
-    echo "there is an error!"
+    echo "there is an error in $LINE_NO and command is $BASH_COMMAND"
  }
 
 trap error err
