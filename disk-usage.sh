@@ -7,7 +7,7 @@ DISK_THRESHOLD=2 #in projects we keep it as 75
 
  while IFS= read -r line
  do 
-    if [ $DISK_USAGE -ge  $DISK_THRESHOLD ]
+    if [ $line -ge  $DISK_THRESHOLD ]
     then
         echo "High usage on $PATH $DISK_USAGE"
         exit 1
