@@ -10,7 +10,7 @@ DISK_THRESHOLD=2 #in projects we keep it as 75
     $PATH
     if [ $line -ge  $DISK_THRESHOLD ]
     then
-        echo  -e "High usage on below paths: \n $PATH $DISK_USAGE"
+        echo  -e "High usage on below paths: \n $DISK_USAGE: $PATH"
         exit 1
    fi
 
