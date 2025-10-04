@@ -3,7 +3,8 @@
 DISK_USAGE=$(df -hT|grep -v Filesystem)
 
 DISK_THRESHOLD=2 #in projects we keep it as 75
-
+IP_ADDRESS=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)
+MESSAGE=""
 
  while IFS= read -r line
  do 
@@ -13,8 +14,18 @@ DISK_THRESHOLD=2 #in projects we keep it as 75
     if [ $USED -ge $DISK_THRESHOLD ]
     then 
        
-        echo  -e "High usage on below paths: \n $MOUNT_PATH $USED"
+      MESSAGE+="High usage on below paths: \n $MOUNT_PATH $USED"
       
    fi
 
 done<<<$DISK_USAGE
+
+echo -e "Message Body:$MESSAGE"
+
+sh Mail.sh "deepthi.devops9@gmail.com"  "High Disk Usage Alert"  "High Disk Usage" "$MESSAGE" "$IP_ADDRESS" "DevOps Team"
+
+# TO_ADDRESS=$1
+# SUBJECT=$2
+# ALERT_TYPE=$3
+# MESSAGE_BODY=$4
+# IP_ADDRESS=$5
