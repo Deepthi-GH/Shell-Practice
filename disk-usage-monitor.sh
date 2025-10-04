@@ -14,7 +14,7 @@ MESSAGE=""
     if [ $USED -ge $DISK_THRESHOLD ]
     then 
        
-      MESSAGE+="High usage on below paths: $MOUNT_PATH $USED %\n"
+      MESSAGE+="High usage on below paths: $MOUNT_PATH $USED%\n"
       
    fi
 
