@@ -14,13 +14,13 @@ MESSAGE=""
     if [ $USED -ge $DISK_THRESHOLD ]
     then 
        
-      MESSAGE+="High usage on below paths: $MOUNT_PATH $USED% <br>"
-      
+      MESSAGE+="High usage on below paths: $MOUNT_PATH $USED% <br>" 
    fi
 
 done<<<$DISK_USAGE
 
 echo -e "Message Body:\n$MESSAGE"
+MESSAGE_BODY=$(echo -e "$MESSAGE" | sed 's/$/<br>/')
 
 sh Mail.sh "deepthi.devops9@gmail.com"  "High Disk Usage Alert"  "High Disk Usage" "$MESSAGE" "$IP_ADDRESS" "DevOps Team"
 
